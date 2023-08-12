@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-title">Mi Lista de Tareas</h1>
+    </header>
+    
+    <div class="container">
+        <section class="task-list">
+            <h2 class="section-title">Lista de Tareas</h2>
+            <ul>
+                <li th:each="task : ${tasks}" class="task-item">
+                    <span th:text="${task.description}" class="task-description"></span>
+                     
+                    <div class="task-details">
+                        <span th:text="${task.completed ? 'Completado' : 'Pendiente'}"
+                              class="task-status"
+                              th:class="${task.completed ? 'task-completed' : 'task-pending'}"></span>
+                        <span th:text="${task.dueDate != null ? task.dueDate : 'Sin fecha'}" class="task-due-date"></span>
+                    </div>
+                    <div class="task-actions">
+                        
+                        <a th:href="@{/edit/{id}(id=${task.id})}" class="edit-link">Editar</a>
+                        
+                        <a th:href="@{/delete/{id}(id=${task.id})}" class="delete-link">Eliminar</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="add-task">
+            <h2 class="section-title">Agregar Nueva Tarea</h2>
+            <form th:action="@{/add}" method="post">
+                <input type="text" name="taskDescription" placeholder="Descripción de la tarea" class="task-input">
+                <input type="date" name="dueDate" class="due-date-input">
+                <button type="submit" class="add-button">Agregar</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© 2023 Mi Lista de Tareas</p>
+    </footer>
+</body>
+</html>

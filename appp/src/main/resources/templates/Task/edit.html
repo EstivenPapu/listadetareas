@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Tarea</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header-title">Editar Tarea</h1>
+        </header>
+        
+        <section class="edit-task">
+            <form th:action="@{/update}" method="post">
+                
+                <input type="hidden" name="id" th:value="${task.id}" />
+                <label for="taskDescription" class="edit-label">Descripción de la tarea:</label>
+                <input type="text" id="taskDescription" name="description" th:value="${task.description}" class="edit-input">
+                
+                <label for="completed" class="edit-label">Completado:</label>
+                <input type="checkbox" id="completed" name="completed" th:checked="${task.completed}" class="edit-checkbox">
+                
+                <label for="dueDate" class="edit-label">Fecha de Vencimiento:</label>
+                <input type="date" id="dueDate" name="dueDate" th:value="${task.dueDate != null ? task.dueDate : ''}" class="edit-input">
+                
+                <button type="submit" class="edit-button">Guardar Cambios</button>
+            </form>
+        </section> 
+    </div>
+
+    <footer class="footer">
+        <p>© 2023 Mi Lista de Tareas</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* style.css */
+
+/* Estilos generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Encabezado */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-title {
+    padding: 20px;
+    color: #333333;
+    font-weight: 600;
+}
+
+/* Sección de lista de tareas */
+.task-list {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 0;
+}
+
+.task-description {
+    flex: 1;
+    white-space: pre-wrap; /* Permite saltos de línea */
+    word-break: break-word; /* Rompe palabras largas */
+    max-width: 35%; /* Anchura máxima antes de realizar un salto de línea */
+    color: #333333;
+}
+ /* Estilo para tareas completadas */
+        .task-completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        /* Estilo para tareas pendientes */
+        .task-pending {
+            font-weight: bold;
+            color: #333;
+        }
+        
+.task-actions a {
+    text-decoration: none;
+    color: #666666;
+    margin-left: 10px;
+}
+.task-actions {
+    margin-left: 25px;
+}
+.edit-link:hover,
+.delete-link:hover {
+    color: #ff9900;
+}
+
+/* Sección de agregar tarea */
+.add-task {
+    text-align: center;
+}
+
+.task-input {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #ffcc66;
+}
+
+/* Pie de página */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #666666;
+}
+/* Estilos específicos para edit.html */
+
+.edit-label {
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.edit-input {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.edit-button {
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #ffcc66;
+}
+.edit-task {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
